@@ -32,7 +32,7 @@ piano.addEventListener("mousedown", function (e) {
   piano.addEventListener("mouseout", function (e) {
     e.target.classList.remove("piano-key-active");
   });
-  piano.addEventListener("mouseup", function (e) { //отжал
+  document.addEventListener("mouseup", function (e) { //отжал
     isTrueM = false;
     e.target.classList.remove("piano-key-active");
   });
@@ -75,3 +75,20 @@ document.addEventListener("keyup", function (e) {
   pressrdK = 0;
 });
 //закончил с клавиатурой
+
+//fullscreen
+const a = document.querySelector('.openfullscreen')
+a.addEventListener("click", function(e) {
+  //if (e.keyCode === 13) {
+    toggleFullScreen();
+  }
+);
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
