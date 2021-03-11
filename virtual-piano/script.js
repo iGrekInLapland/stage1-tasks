@@ -92,3 +92,17 @@ function toggleFullScreen() {
     }
   }
 }
+//кнопки переключения
+ const btn = document.querySelectorAll(".btn");
+ btn.forEach( i  => i.addEventListener("click", turn))
+
+function turn(e){
+  btn.forEach(i => i.classList.remove('btn-active'));
+  e.target.classList.add('btn-active');
+  //console.log(e.target.classList.contains('btn-notes'));
+  if(e.target.classList.contains('btn-notes')){
+  pianoКeys.forEach(i => i.classList.remove('piano-key-letter'));
+  }else{
+    pianoКeys.forEach(i => i.classList.add('piano-key-letter'));
+  }
+ }
