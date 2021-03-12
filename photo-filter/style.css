@@ -309,3 +309,6 @@ img {
     margin: 3px;
   }
 }
+  canvas {
+    display: none;
+  }
