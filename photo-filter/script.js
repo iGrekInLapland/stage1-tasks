@@ -12,3 +12,22 @@ flscr.addEventListener("click", () => {
 });
 //ended fullscreen
 
+//range
+
+const inputs = document.querySelectorAll("input");
+const outputs = document.querySelectorAll("output");
+
+inputs.forEach((e) => e.addEventListener("input", updateValue));
+
+function updateValue() {
+  for (let i = 0; i < outputs.length; i++) {
+    outputs[i].value = inputs[i].value;
+  }
+  //set style
+  const suffix = this.dataset.sizing || '';
+  document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+}
+
+
+
+
