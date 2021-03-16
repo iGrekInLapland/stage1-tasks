@@ -15,7 +15,8 @@ const muz = {
 //mouse
 const piano = document.querySelector(".piano");
 piano.addEventListener("mousedown", function (e) {
-  // console.log(e.type);
+  if(0 > e.offsetY || e.offsetY > piano.offsetHeight) return false;
+  //console.log(0 > e.offsetY || e.offsetY > piano.offsetHeight);
   let isTrueM = true;
 
   e.target.classList.add("piano-key-active");
@@ -23,7 +24,8 @@ piano.addEventListener("mousedown", function (e) {
   // }
   soundClick(e.target.dataset.letter);
   piano.addEventListener("mouseover", function (e) {//поводил
-    // console.log(e.type)
+     //console.log(e);
+    if(0 > e.offsetY || e.offsetY > piano.offsetHeight) return false;
     if (isTrueM) e.target.classList.add("piano-key-active");
     
     if (isTrueM) soundClick(e.target.dataset.letter);
